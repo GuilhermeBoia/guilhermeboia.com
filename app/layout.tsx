@@ -1,85 +1,37 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useState } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://guilhermeboia.com"),
-  title: {
-    template: "%s | Guilherme Boia",
-    default: "Guilherme Boia | Developer",
-  },
-  description:
-    "Software Engineer passionate about building great products and sharing knowledge",
-  openGraph: {
-    title: {
-      default: "Guilherme Boia | Developer",
-      template: "%s | Guilherme Boia",
-    },
-    description:
-      "Software Engineer passionate about building great products and sharing knowledge",
-    url: "https://guilhermeboia.com",
-    siteName: "Guilherme Boia",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Guilherme Boia - Developer",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  alternates: {
-    canonical: "https://guilhermeboia.com",
-  },
-  keywords: [
-    "Software Engineer",
-    "Web Development",
-    "Product Development",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Guilherme Boia",
-  ],
-  authors: [{ name: "Guilherme Boia" }],
-  creator: "Guilherme Boia",
-  publisher: "Guilherme Boia",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const baseClasses = `${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col items-center`;
+
   return (
     <html lang="en" className="bg-[#08070b] text-gray-400 h-full">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col items-center`}
-      >
-        {children}
-      </body>
+      <body className={baseClasses}>{mounted ? children : null}</body>
     </html>
   );
 }
