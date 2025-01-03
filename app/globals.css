@@ -4,14 +4,25 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #08070b;
+  --selection-color: #4338ca;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #08070b;
     --foreground: #ededed;
   }
+}
+
+::selection {
+  background: var(--selection-color);
+  color: black;
+}
+
+::-moz-selection {
+  background: var(--selection-color);
+  color: black;
 }
 
 body {
