@@ -8,6 +8,7 @@ interface Post {
   title: string;
   date: string;
   content: string;
+  selectionColor: string;
 }
 
 const BlogPostPage = ({ post }: { post: Post }) => {
@@ -15,8 +16,11 @@ const BlogPostPage = ({ post }: { post: Post }) => {
 
   useEffect(() => {
     setMounted(true);
-    document.documentElement.style.setProperty("--selection-color", "#85FFB7");
-  }, []);
+    document.documentElement.style.setProperty(
+      "--selection-color",
+      post.selectionColor
+    );
+  }, [post.selectionColor]);
 
   if (!mounted) {
     return null;

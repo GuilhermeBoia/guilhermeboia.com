@@ -58,15 +58,15 @@ const Homepage = () => {
         </div>
 
         {mounted && (
-          <div className="lg:flex hidden justify-center">
-            <div className="relative">
+          <div className="lg:flex hidden justify-center items-center">
+            <div className="relative w-96 h-96">
               <Image
                 src="/images/foto-perfil.jpeg"
-                width={320}
-                height={320}
                 alt="Guilherme Boia"
+                fill
                 className="rounded-2xl object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pink-500/10 to-purple-500/10" />
             </div>

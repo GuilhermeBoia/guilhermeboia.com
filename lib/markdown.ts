@@ -17,6 +17,7 @@ export interface Post {
   description: string;
   date: string;
   coverImage?: string;
+  selectionColor: string;
   content: string;
 }
 
@@ -36,6 +37,7 @@ export function getPostBySlug(slug: string): Post {
     description: data.description,
     date: data.date,
     coverImage: data.coverImage,
+    selectionColor: data.selectionColor,
     content: htmlContent,
   };
 }
