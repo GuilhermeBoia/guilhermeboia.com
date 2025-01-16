@@ -1,14 +1,49 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, createContext, useContext, ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+interface ScrollContextType {
+  scrollPosition: number;
+  setScrollPosition: (position: number) => void;
+}
+
+const ScrollContext = createContext<ScrollContextType>({
+  scrollPosition: 0,
+  setScrollPosition: () => {},
+});
+
+interface ScrollProviderProps {
+  children: ReactNode;
+}
+
+export const ScrollProvider = ({ children }: ScrollProviderProps) => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  return (
+    <ScrollContext.Provider value={{ scrollPosition, setScrollPosition }}>
+      {children}
+    </ScrollContext.Provider>
+  );
+};
+
+interface NavItem {
+  name: string;
+  path: string;
+  isExternal?: boolean;
+}
+
+interface NavLinkProps {
+  item: NavItem;
+}
 
 const NavBar = () => {
   const [hovered, setHovered] = useState("");
   const pathname = usePathname();
+  const { scrollPosition, setScrollPosition } = useContext(ScrollContext);
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/projects" },
     { name: "Blog", path: "/blog" },
@@ -19,6 +54,16 @@ const NavBar = () => {
     },
   ];
 
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    setScrollPosition(e.currentTarget.scrollLeft);
+  };
+
+  const setScrollLeft = (element: HTMLDivElement | null) => {
+    if (element) {
+      element.scrollLeft = scrollPosition;
+    }
+  };
+
   const isCurrentPage = (path: string) => {
     if (path === "/") {
       return pathname === path;
@@ -26,7 +71,7 @@ const NavBar = () => {
     return pathname?.startsWith(path);
   };
 
-  const NavLink = ({ item }: { item: (typeof navItems)[0] }) => {
+  const NavLink = ({ item }: NavLinkProps) => {
     const isActive = isCurrentPage(item.path);
     const baseClasses = `relative text-sm uppercase tracking-wider px-4 py-2 inline-block transition-colors duration-200 ease-in-out whitespace-nowrap
       ${
@@ -82,7 +127,9 @@ const NavBar = () => {
     <nav className="w-full py-2">
       <div className="flex justify-center">
         <div
-          className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar max-w-full"
+          ref={setScrollLeft}
+          onScroll={handleScroll}
+          className="flex overflow-x-auto no-scrollbar max-w-full"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
@@ -91,7 +138,7 @@ const NavBar = () => {
         >
           <ul className="flex space-x-4 md:space-x-8 mx-auto px-4">
             {navItems.map((item) => (
-              <li key={item.name} className="relative snap-center">
+              <li key={item.name} className="relative">
                 <NavLink item={item} />
               </li>
             ))}

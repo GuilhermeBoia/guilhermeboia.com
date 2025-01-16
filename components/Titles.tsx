@@ -28,7 +28,7 @@ const GradientTitle = ({
     <>
       <h1 className={`font-sans ${titleSizes[size]} font-medium`}>
         <span
-          className="gradient-title inline-block text-transparent bg-clip-text"
+          className="gradient-title inline-block text-transparent bg-clip-text py-3"
           style={gradientStyle}
         >
           {title}

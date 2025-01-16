@@ -22,7 +22,7 @@ const ContactPage = () => {
 
   useEffect(() => {
     setMounted(true);
-    document.documentElement.style.setProperty("--selection-color", "#9370DB");
+    document.documentElement.style.setProperty("--selection-color", "#93C5FD");
   }, []);
 
   const validateForm = () => {
@@ -63,7 +63,6 @@ const ContactPage = () => {
       ...prev,
       [name]: value,
     }));
-    // Clear error when user starts typing
     if (errors[name as keyof typeof errors]) {
       setErrors((prev) => ({
         ...prev,
@@ -125,12 +124,7 @@ const ContactPage = () => {
       <div className="max-w-xl w-full space-y-12">
         <div className="flex flex-col space-y-6">
           <div className="text-left">
-            <GradientTitleBig
-              title="Contact Me"
-              fromColor="#FF69B4"
-              viaColor="#DA70D6"
-              toColor="#9370DB"
-            />
+            <GradientTitleBig title="Contact Me" />
             <p className="text-gray-400 mt-4 text-lg">
               Feel free to reach me out for{" "}
               <span className="text-gray-300">any reason.</span>

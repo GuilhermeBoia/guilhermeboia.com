@@ -22,11 +22,14 @@ const BlogPostPage = ({ post }: { post: Post }) => {
     return null;
   }
 
-  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+  const formattedDate = new Date(post.date + "T12:00:00").toLocaleDateString(
+    "en-US",
+    {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    }
+  );
 
   return (
     <div className="w-full">

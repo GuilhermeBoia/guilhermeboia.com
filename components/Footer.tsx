@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { Mail, Linkedin, Github, Instagram } from "lucide-react";
 import Link from "next/link";
@@ -33,7 +34,16 @@ const Footer = () => {
     },
   ];
 
-  const IconComponent = ({ item }) => (
+  const IconComponent = ({
+    item,
+  }: {
+    item: {
+      name: string;
+      icon: React.ComponentType<{ size: number; className: string }>;
+      link: string;
+      isInternal: boolean;
+    };
+  }) => (
     <item.icon
       size={24}
       className={`transition-colors duration-200 ease-in-out ${

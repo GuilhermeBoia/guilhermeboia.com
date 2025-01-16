@@ -8,7 +8,7 @@ const ProjectPage = () => {
 
   useEffect(() => {
     setMounted(true);
-    document.documentElement.style.setProperty("--selection-color", "#FF69B4");
+    document.documentElement.style.setProperty("--selection-color", "#FFFFFF");
   }, []);
 
   if (!mounted) {
@@ -16,20 +16,20 @@ const ProjectPage = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 text-white">
-      <div className="max-w-3xl w-full space-y-12">
-        {/* Text Content */}
-        <div className="flex flex-col space-y-6">
+    <div className="w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center lg:mt-8">
+        <div className="flex flex-col space-y-6 max-w-xl lg:max-w-none mx-auto">
           <div>
             <GradientTitleBig
-              title="Guilherme Boia"
-              fromColor="#FF69B4"
-              viaColor="#DA70D6"
-              toColor="#9370DB"
+              title="building this page..."
+              fromColor="#e5e7eb"
+              viaColor="#d1d5db"
+              toColor="#9ca3af"
             />
-            <p className="text-gray-400 mt-4 text-lg">
-              Software Engineer passionate about building great products and
-              sharing knowledge
+            <p className="text-gray-400 mt-6 text-lg">
+              This page is currently under construction. Soon it will showcase
+              various projects and their detailed descriptions. Stay tuned for
+              updates!
             </p>
           </div>
         </div>
