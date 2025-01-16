@@ -39,20 +39,20 @@ const Homepage = () => {
 
           <div className="space-y-4">
             <p className="text-gray-400 leading-relaxed">
-              I&apos;m a Software Engineer based in{" "}
-              <span className="text-white">Brazil</span>, focused on creating
-              impactful solutions that make a difference. With expertise in{" "}
-              <span className="text-white">web development</span> and a keen eye
-              for user experience, I bring ideas to life through clean,
-              efficient and scalable code.
+              <span className="text-white">Hey!</span> I&apos;m a Software
+              Engineer based in <span className="text-white">Brazil</span>,
+              passionate about creating impactful solutions in web development,
+              artificial intelligence, and competitive programming. I love
+              building innovative tools and sharing knowledge with the tech
+              community.
             </p>
+
             <p className="text-gray-400 leading-relaxed">
-              Currently, I&apos;m working on innovative projects using modern
-              technologies like <span className="text-white">React</span>,{" "}
-              <span className="text-white">Next.js</span>, and{" "}
-              <span className="text-white">TypeScript</span>. I&apos;m
-              passionate about creating performant and accessible web
-              applications that provide great user experiences.
+              I built this website as a{" "}
+              <span className="text-white">personal project</span> to share my
+              thoughts, showcase my work, and document my journey in tech. Here
+              you&apos;ll find my projects, blog posts about things I&apos;m
+              learning. Feel free to explore and reach out if you want to chat!
             </p>
           </div>
         </div>
