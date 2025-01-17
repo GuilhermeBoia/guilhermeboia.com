@@ -124,7 +124,7 @@ const ContactPage = () => {
       <div className="max-w-xl w-full space-y-12">
         <div className="flex flex-col space-y-6">
           <div className="text-left">
-            <GradientTitleBig title="Contact Me" />
+            <GradientTitleBig title="contact me." />
             <p className="text-gray-400 mt-4 text-lg">
               Feel free to reach me out for{" "}
               <span className="text-gray-300">any reason.</span>

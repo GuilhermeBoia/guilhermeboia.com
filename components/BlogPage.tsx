@@ -43,7 +43,7 @@ const BlogPage = () => {
           {/* Header Section */}
           <div className="space-y-4">
             <GradientTitleBig
-              title="Thinking during journey"
+              title="my thoughts."
               fromColor="#FF69B4"
               viaColor="#DA70D6"
               toColor="#9370DB"

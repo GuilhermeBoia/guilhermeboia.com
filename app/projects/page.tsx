@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     absolute: "Projects | Guilherme Boia",
   },
   description:
-    "Software Engineer passionate about building great products and sharing knowledge. Explore my projects, insights, and experience in software development.",
+    "Undergrad Computer Science student just sharing my thoughts and document my journey in tech.",
   openGraph: {
     title: "Projects",
     description:
-      "Software Engineer passionate about building great products and sharing knowledge. Explore my projects, insights, and experience in software development.",
+      "Undergrad Computer Science student just sharing my thoughts and document my journey in tech.",
   },
 };
 

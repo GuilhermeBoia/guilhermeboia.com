@@ -21,7 +21,7 @@ const ProjectPage = () => {
         <div className="flex flex-col space-y-6 max-w-xl lg:max-w-none mx-auto">
           <div>
             <GradientTitleBig
-              title="building this page..."
+              title="in construction..."
               fromColor="#e5e7eb"
               viaColor="#d1d5db"
               toColor="#9ca3af"

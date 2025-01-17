@@ -24,8 +24,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-[#08070b] text-gray-400 h-full">
       <head>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://guilhermeboia.com/" />
         <meta
