@@ -61,7 +61,7 @@ const Homepage = () => {
           <div className="lg:flex hidden justify-center items-center">
             <div className="relative w-96 h-96">
               <Image
-                src="/images/foto-perfil.jpeg"
+                src="/images/profile.jpeg"
                 alt="Guilherme Boia"
                 fill
                 className="rounded-2xl object-cover"
