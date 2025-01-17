@@ -3,16 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #08070b;
+  --background: #08070b;
+  --foreground: #ededed;
   --selection-color: #ff69b4;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #08070b;
-    --foreground: #ededed;
-  }
 }
 
 ::selection {
