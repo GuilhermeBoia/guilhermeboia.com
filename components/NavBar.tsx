@@ -1,6 +1,12 @@
 "use client";
 
-import React, { useState, createContext, useContext, ReactNode } from "react";
+import React, {
+  useState,
+  createContext,
+  useContext,
+  ReactNode,
+  useEffect,
+} from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -40,8 +46,13 @@ interface NavLinkProps {
 
 const NavBar = () => {
   const [hovered, setHovered] = useState("");
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const pathname = usePathname();
   const { scrollPosition, setScrollPosition } = useContext(ScrollContext);
+
+  useEffect(() => {
+    setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
 
   const navItems: NavItem[] = [
     { name: "Home", path: "/" },
@@ -80,6 +91,13 @@ const NavBar = () => {
           : "text-gray-400 hover:text-white"
       }`;
 
+    const hoverEffect = !isTouchDevice
+      ? {
+          onMouseEnter: () => setHovered(item.name),
+          onMouseLeave: () => setHovered(""),
+        }
+      : {};
+
     if (item.isExternal) {
       return (
         <Link
@@ -87,9 +105,26 @@ const NavBar = () => {
           target="_blank"
           rel="noopener noreferrer"
           className={baseClasses}
-          onMouseEnter={() => setHovered(item.name)}
-          onMouseLeave={() => setHovered("")}
+          {...hoverEffect}
         >
+          {!isTouchDevice && (
+            <span
+              className={`absolute inset-0 bg-gray-400 rounded-lg transition-all duration-300 ease-in-out transform 
+                ${
+                  hovered === item.name
+                    ? "scale-100 opacity-10"
+                    : "scale-90 opacity-0"
+                }`}
+            />
+          )}
+          {item.name}
+        </Link>
+      );
+    }
+
+    return (
+      <Link href={item.path} className={baseClasses} {...hoverEffect}>
+        {!isTouchDevice && (
           <span
             className={`absolute inset-0 bg-gray-400 rounded-lg transition-all duration-300 ease-in-out transform 
               ${
@@ -98,26 +133,7 @@ const NavBar = () => {
                   : "scale-90 opacity-0"
               }`}
           />
-          {item.name}
-        </Link>
-      );
-    }
-
-    return (
-      <Link
-        href={item.path}
-        className={baseClasses}
-        onMouseEnter={() => setHovered(item.name)}
-        onMouseLeave={() => setHovered("")}
-      >
-        <span
-          className={`absolute inset-0 bg-gray-400 rounded-lg transition-all duration-300 ease-in-out transform 
-            ${
-              hovered === item.name
-                ? "scale-100 opacity-10"
-                : "scale-90 opacity-0"
-            }`}
-        />
+        )}
         {item.name}
       </Link>
     );
