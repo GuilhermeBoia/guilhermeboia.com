@@ -1,16 +1,16 @@
 import { getPostBySlug } from "@/lib/markdown";
 import BlogPostPageClient from "@/components/BlogPostPageClient";
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
 
-type Props = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const resolvedParams = await params;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
-    const post = getPostBySlug(params.slug);
+    const post = await getPostBySlug(resolvedParams.slug);
 
     return {
       title: `${post.title} | Blog`,
@@ -22,11 +22,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: "The requested blog post could not be found.",
     };
   }
-}
+};
 
-export default async function Post({ params }: Props) {
+export default async function Post({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
+
   try {
-    const post = getPostBySlug(params.slug);
+    const post = await getPostBySlug(resolvedParams.slug);
     return <BlogPostPageClient post={post} />;
   } catch {
     notFound();

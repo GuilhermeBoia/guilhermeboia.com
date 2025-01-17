@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
@@ -21,11 +21,11 @@ export interface Post {
   content: string;
 }
 
-export function getPostBySlug(slug: string): Post {
+export async function getPostBySlug(slug: string): Promise<Post> {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = path.join(postsDirectory, `${realSlug}.md`);
 
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = await fs.readFile(fullPath, "utf8");
 
   const { data, content } = matter(fileContents);
 
@@ -42,10 +42,8 @@ export function getPostBySlug(slug: string): Post {
   };
 }
 
-export function getAllPosts(): Post[] {
-  const slugs = fs.readdirSync(postsDirectory);
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+export async function getAllPosts(): Promise<Post[]> {
+  const slugs = await fs.readdir(postsDirectory);
+  const posts = await Promise.all(slugs.map((slug) => getPostBySlug(slug)));
+  return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 }

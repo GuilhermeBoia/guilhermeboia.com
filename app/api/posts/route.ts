@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/markdown";
 
 export async function GET() {
   try {
-    const posts = getAllPosts();
+    const posts = await getAllPosts();
     return NextResponse.json(posts);
   } catch (error) {
     console.error("Error fetching posts:", error);
