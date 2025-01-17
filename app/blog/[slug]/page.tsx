@@ -3,11 +3,15 @@ import BlogPostPageClient from "@/components/BlogPostPageClient";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
+interface PageParams {
+  params: {
+    slug: string;
+  };
+}
+
 export async function generateMetadata({
   params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+}: PageParams): Promise<Metadata> {
   try {
     const post = getPostBySlug(params.slug);
 
@@ -23,7 +27,7 @@ export async function generateMetadata({
   }
 }
 
-export default async function Post({ params }: { params: { slug: string } }) {
+export default async function Post({ params }: PageParams) {
   try {
     const post = getPostBySlug(params.slug);
     return <BlogPostPageClient post={post} />;
