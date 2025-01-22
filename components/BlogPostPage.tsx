@@ -86,26 +86,71 @@ const BlogPostPage = ({ post }: { post: Post }) => {
           max-width: 100%;
         }
 
+        /* Heading styles */
+        .prose h1 {
+          color: white;
+          font-size: 2.5rem;
+          font-weight: 600;
+          margin-top: 3rem;
+          margin-bottom: 2rem;
+          line-height: 1.2;
+        }
+
         .prose h2 {
           color: white;
-          font-size: 2rem;
-          font-weight: 500;
+          font-size: 1.8rem;
+          font-weight: 700;
           margin-top: 2.5rem;
           margin-bottom: 1.5rem;
+          line-height: 1.3;
+        }
+
+        .prose h3 {
+          color: white;
+          font-size: 1.3rem;
+          font-weight: 700;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          line-height: 1.4;
         }
 
         .prose p {
           margin-bottom: 1.5rem;
-          color: #d1d5db;
+          color: #9ca3af;
+          font-weight: 300;
         }
 
+        .prose strong {
+          color: white;
+          font-weight: 400;
+        }
+
+        /* Link styles */
         .prose a {
-          color: #60a5fa;
-          text-decoration: none;
+          color: white;
+          text-decoration: underline;
+          transition: opacity 0.2s;
         }
 
         .prose a:hover {
-          text-decoration: underline;
+          opacity: 0.8;
+        }
+
+        /* Figure and image styles */
+        .prose figure {
+          margin: 2rem 0;
+        }
+
+        .prose figure img {
+          border-radius: 0.5rem;
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .prose .post-image-full {
+          width: 100%;
+          border-radius: 0.5rem;
         }
 
         .prose blockquote {
@@ -136,6 +181,24 @@ const BlogPostPage = ({ post }: { post: Post }) => {
           background-color: transparent;
           padding: 0;
           border-radius: 0;
+        }
+
+        /* List styles */
+        .prose ul {
+          list-style-type: disc;
+          padding-left: 1.5rem;
+          margin: 1.5rem 0;
+        }
+
+        .prose ol {
+          list-style-type: decimal;
+          padding-left: 1.5rem;
+          margin: 1.5rem 0;
+        }
+
+        .prose li {
+          margin-bottom: 0.5rem;
+          color: #d1d5db;
         }
       `}</style>
     </div>
