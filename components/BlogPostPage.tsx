@@ -72,7 +72,7 @@ const BlogPostPage = ({ post }: { post: Post }) => {
           <article className="max-w-3xl mx-auto px-4 mt-12 mb-12">
             <div className="prose prose-invert prose-lg mx-auto">
               <div
-                className="text-gray-300 text-lg leading-relaxed space-y-6"
+                className="text-gray-300 text-lg leading-relaxed space-y-6 lg:text-base"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>
