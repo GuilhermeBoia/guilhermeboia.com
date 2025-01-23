@@ -69,7 +69,7 @@ const BlogPostPage = ({ post }: { post: Post }) => {
         </div>
 
         <div className="bg-[#08070b]">
-          <article className="max-w-3xl mx-auto px-4 py-24">
+          <article className="max-w-3xl mx-auto px-4 mt-12 mb-12">
             <div className="prose prose-invert prose-lg mx-auto">
               <div
                 className="text-gray-300 text-lg leading-relaxed space-y-6"
