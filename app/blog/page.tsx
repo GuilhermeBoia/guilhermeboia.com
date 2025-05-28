@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     title: "Blog | Guilherme Boia",
     description:
       "Undergrad Computer Science student just sharing my thoughts and document my journey in tech.",
+    images: [
+      {
+        url: "https://guilhermeboia.com/og-image.png",
+      },
+    ],
   },
 };
 

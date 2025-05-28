@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     title: "Contact | Guilherme Boia",
     description:
       "Get in touch with me to discuss projects, opportunities, or just to chat about technology and software development.",
+    images: [
+      {
+        url: "https://guilhermeboia.com/og-image.png",
+      },
+    ],
   },
 };
 
