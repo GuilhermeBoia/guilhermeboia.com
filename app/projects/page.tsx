@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Undergrad Computer Science student just sharing my thoughts and document my journey in tech.",
   openGraph: {
-    title: "Projects",
+    title: "Projects | Guilherme Boia",
     description:
       "Undergrad Computer Science student just sharing my thoughts and document my journey in tech.",
   },

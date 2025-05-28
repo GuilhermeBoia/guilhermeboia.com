@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Get in touch with me to discuss projects, opportunities, or just to chat about technology and software development.",
   openGraph: {
-    title: "Contact",
+    title: "Contact | Guilherme Boia",
     description:
       "Get in touch with me to discuss projects, opportunities, or just to chat about technology and software development.",
   },

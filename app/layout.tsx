@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { ScrollProvider } from "@/components/NavBar";
 import "./globals.css";
+import { Metadata } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +15,25 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+export const metadata: Metadata = {
+  title: {
+    default: "Guilherme Boia | Software Engineer",
+    template: "%s | Guilherme Boia",
+  },
+  description: "Undergrad Computer Science student just sharing my thoughts and document my journey in tech.",
+  openGraph: {
+    type: "website",
+    url: "https://guilhermeboia.com/",
+    title: "Guilherme Boia | Software Engineer",
+    description: "Undergrad Computer Science student just sharing my thoughts and document my journey in tech.",
+    images: [
+      {
+        url: "https://guilhermeboia.com/og-image.png",
+      },
+    ],
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,22 +43,6 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="bg-[#08070b] text-gray-400 h-full">
-      <head>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://guilhermeboia.com/" />
-        <meta
-          property="og:title"
-          content="Guilherme Boia | Software Engineer"
-        />
-        <meta
-          property="og:description"
-          content="Undergrad Computer Science student just sharing my thoughts and document my journey in tech."
-        />
-        <meta
-          property="og:image"
-          content="https://guilhermeboia.com/og-image.png"
-        />
-      </head>
       <body className={baseClasses}>
         <ScrollProvider>{children}</ScrollProvider>
       </body>
