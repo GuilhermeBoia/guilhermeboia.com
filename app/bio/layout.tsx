@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Consultoria em Tecnologia | Guilherme Boia",
     description:
-      "Automatize processos repetitivos, organize seus dados em um só lugar e entregue resultados profissionais que impressionam e te diferenciam do mercado. Consultoria personalizada para sua empresa.",
+      "Automatize processos, organize dados e entregue resultados profissionais. Transforme seu negócio com tecnologia e IA.",
     type: "website",
     locale: "pt_BR",
     url: "https://guilhermeboia.com/bio",
