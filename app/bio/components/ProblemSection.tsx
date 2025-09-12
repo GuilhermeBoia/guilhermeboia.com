@@ -22,7 +22,7 @@ export function ProblemSection() {
     },
     {
       icon: <X className="w-5 h-5" />,
-      title: "Entregas ótimas, mas não são encantadoras",
+      title: "Entregas úteis, mas que não encantam",
       impact: "Zero encantamento",
     },
   ];

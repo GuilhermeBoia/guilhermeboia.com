@@ -36,7 +36,7 @@ export function HeroSection() {
         >
           {/* Badge */}
           <motion.div 
-            className="inline-flex items-center gap-2 sm:gap-3 px-3 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-400/20 backdrop-blur-sm mb-6 sm:mb-8 hover:from-purple-500/20 hover:to-blue-500/20 transition-all duration-300"
+            className="hidden md:inline-flex items-center gap-2 sm:gap-3 px-3 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-400/20 backdrop-blur-sm mb-6 sm:mb-8 hover:from-purple-500/20 hover:to-blue-500/20 transition-all duration-300"
             {...fadeInUp}
             transition={{ delay: 0.3 }}
           >
@@ -46,7 +46,7 @@ export function HeroSection() {
           
           {/* Headline with Gradient Text */}
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal leading-tight mb-6"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal leading-tight mb-6"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
