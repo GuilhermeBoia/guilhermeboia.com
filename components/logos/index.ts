@@ -1,0 +1,6 @@
+export { default as Gemini } from './Gemini'
+export { default as MagicUI } from './MagicUI'
+export { default as GoogleSheets } from './GoogleSheets'
+export { default as ChatGPT } from './ChatGPT'
+export { default as Notion } from './Notion'
+export { default as WhatsApp } from './WhatsApp'

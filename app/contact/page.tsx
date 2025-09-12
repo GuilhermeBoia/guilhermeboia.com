@@ -26,7 +26,7 @@ export default function Contact() {
     <>
       <div className="w-full max-w-6xl flex flex-col h-full px-4">
         <NavBar />
-        <main className="flex-1 w-full flex items-center justify-center p-6 ">
+        <main className="flex-1 w-full flex items-center">
           <ContactPage />
         </main>
         <Footer />

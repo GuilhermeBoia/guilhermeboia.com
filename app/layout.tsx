@@ -42,7 +42,7 @@ export default function RootLayout({
   const baseClasses = `${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col items-center`;
 
   return (
-    <html lang="en" className="bg-[#08070b] text-gray-400 h-full">
+    <html lang="en" className=" text-gray-400 h-full">
       <body className={baseClasses}>
         <ScrollProvider>{children}</ScrollProvider>
       </body>

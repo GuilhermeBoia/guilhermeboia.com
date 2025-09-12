@@ -3,7 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { GradientTitleBig } from "@/components/Titles";
 import Image from "next/image";
-import { MapPin } from "lucide-react";
+import Link from "next/link";
+import { MapPin, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Homepage = () => {
   const [mounted, setMounted] = useState(false);
@@ -54,6 +56,18 @@ const Homepage = () => {
               you&apos;ll find my projects, blog posts about things I&apos;m
               learning. Feel free to explore and reach out if you want to chat!
             </p>
+          </div>
+
+          <div className="pt-4">
+            <Link href="/bio">
+              <Button 
+                size="lg"
+                className="bg-white text-black hover:bg-gray-100 gap-2 px-6 py-3 font-semibold transition-all duration-200 hover:scale-105"
+              >
+                Conheça minha consultoria
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </div>
         </div>
 
