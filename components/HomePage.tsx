@@ -29,7 +29,7 @@ const Homepage = () => {
               toColor="#9ca3af"
             />
             <h2 className="text-xl font-medium text-gray-50">
-              Undergrad Computer Science student
+              Software Engineer & Project Tech Lead
             </h2>
             <div className="text-sm text-gray-400 mt-2 flex items-center gap-1">
               <MapPin size={16} className="inline-block" />
@@ -55,7 +55,6 @@ const Homepage = () => {
               learning. Feel free to explore and reach out if you want to chat!
             </p>
           </div>
-
         </div>
 
         {mounted && (
