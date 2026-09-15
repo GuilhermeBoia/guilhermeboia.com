@@ -421,6 +421,10 @@ export function Trajectory() {
       <text x={x(END) - 8} y={padT - 40} fill="var(--paper)" fontSize="18" textAnchor="end" fontFamily="inherit">
         Formatura
       </text>
+      <line x1={x(END)} x2={x(END)} y1={H - padB} y2={H - padB + 8} stroke="var(--muted)" />
+      <text x={x(END) - 6} y={H - padB + 26} fill="var(--muted)" fontSize="18" textAnchor="end" fontFamily="inherit">
+        2027
+      </text>
 
       {/* marcos */}
       {points.filter((p) => p.label).map((p, i) => {
